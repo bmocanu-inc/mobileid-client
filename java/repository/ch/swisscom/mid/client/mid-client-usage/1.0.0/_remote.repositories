@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Mar 16 18:17:16 EET 2021
+mid-client-usage-1.0.0.jar>=
+mid-client-usage-1.0.0.pom>=
+mid-client-usage-1.0.0-sources.jar>=
