@@ -22,17 +22,16 @@ import ch.swisscom.mid.client.model.*;
  * Main interface for the Mobile ID client library. This provides access to the main Mobile ID services, as documented
  * in the Mobile ID Reference Guide (go to <a href="https://www.mobileid.ch/en/documents">Mobile ID documentation</a>, then
  * open the <i>Client Reference Guide</i>).
- * <p>
- * Operations implemented:
+ *
+ * <p>Operations implemented:
  * <ul>
  *     <li>MSS Signature (sync mode)</li>
  *     <li>MSS Signature (async mode) with status polling</li>
  *     <li>MSS Receipt (for a finished MSS Signature)</li>
  *     <li>MSS Profile Query</li>
  * </ul>
- * </p>
- * <p>
- * Technically wise, this MID Client library provides the following:
+ *
+ * <p>Technically wise, this MID Client library provides the following:
  * <ul>
  *     <li>Access to the Additional Services per MSS Signature</li>
  *     <li>Easy access to {@link ch.swisscom.mid.client.model.StatusCode Status Codes}, {@link ch.swisscom.mid.client.model.TrialNumbers Trial Numbers}</li>
@@ -43,7 +42,6 @@ import ch.swisscom.mid.client.model.*;
  *     <li>Interfaces everywhere, easy to test and mock</li>
  *     <li>Thread-safe and connection-pooled default configuration; you can create one of these clients and use it for all you connections</li>
  * </ul>
- * </p>
  */
 public interface MIDClient extends AutoCloseable {
 

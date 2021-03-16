@@ -146,6 +146,11 @@
                     <version>3.7.0.1746</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>jaxws-maven-plugin</artifactId>
                     <version>2.6</version>
@@ -160,7 +165,60 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <reportOutputDirectory>${project.basedir}</reportOutputDirectory>
+                    <destDir>api-docs</destDir>
+                    <excludePackageNames>
+                        ch.swisscom.mid.ts102204.*:ch.swisscom.ts102204.*:fi.*:oasis.*:org.*
+                    </excludePackageNames>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>aggregate</id>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+    <!--    <reporting>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+    <!--                <configuration>-->
+    <!--                    <reportOutputDirectory>${project.basedir}</reportOutputDirectory>-->
+    <!--                    <destDir>api-docs</destDir>-->
+    <!--                    <excludePackageNames>-->
+    <!--                        ch.swisscom.mid.ts102204.*:ch.swisscom.ts102204.*:fi.*:oasis.*:org.*-->
+    <!--                    </excludePackageNames>-->
+    <!--                </configuration>-->
+    <!--                <reportSets>-->
+    <!--                    <reportSet>-->
+    <!--                        <id>aggregate</id>-->
+    <!--                        <inherited>false</inherited>-->
+    <!--                        <reports>-->
+    <!--                            <report>aggregate</report>-->
+    <!--                        </reports>-->
+    <!--                    </reportSet>-->
+    <!--                    <reportSet>-->
+    <!--                        <id>default</id>-->
+    <!--                        <reports>-->
+    <!--                            <report>javadoc</report>-->
+    <!--                        </reports>-->
+    <!--                    </reportSet>-->
+    <!--                </reportSets>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </reporting>-->
 
     <modules>
         <module>mobileid-client-core</module>
