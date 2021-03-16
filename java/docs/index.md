@@ -1,0 +1,1 @@
+Welcome page for Swisscom Mobile ID Java client.
